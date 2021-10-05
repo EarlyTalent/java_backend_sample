@@ -13,7 +13,7 @@ It uses Spring Framework, Maven, Java 11, Lombok and data is stored in a Mongo d
 Currently the application has 2 endpoints:
     
     1) To add a blog post - Post at /blog/post
-    2) To get a blog post by id - Get at /blog/{id}
+    2) To get a blog post by id - Get at /blog/post/{id}
        
 ## Task
 Your task is to add a commenting feature.
