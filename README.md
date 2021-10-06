@@ -3,7 +3,7 @@
 ## Project Setup
 - Fork the repository and clone the repository to your local machine.  Documentation on how to do this https://docs.github.com/en/get-started/quickstart/fork-a-repo
 - open the project locally
-- Create a branch using the naming convention **yourFirstName_yourLastName**
+- Create a branch using the naming convention **yourFirstName_yourLastName**. This is where you work should be saved.
 - Run the project from the WorkSampleApplication class
 - The application will start on [http://localhost:8080](http://localhost:8080)
 
