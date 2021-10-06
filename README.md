@@ -1,8 +1,9 @@
 # Levvel Technical Interview
 
 ## Project Setup
-- **Fork** the repository
-- Clone the forked repository and open the project locally
+- Fork the repository and clone the repository to your local machine.  Documentation on how to do this https://docs.github.com/en/get-started/quickstart/fork-a-repo
+- open the project locally
+- Create a branch using the naming convention **yourFirstName_yourLastName**. This is where you work should be saved.
 - Run the project from the WorkSampleApplication class
 - The application will start on [http://localhost:8080](http://localhost:8080)
 
@@ -46,6 +47,6 @@ Junit - https://junit.org/junit5/docs/current/user-guide/
 Mockito - https://site.mockito.org/
 
 ## Submitting Your Work (IMPORTANT)
-When you are finished, create a Pull Request in Github for the forked repository. Email the link to your Pull Request to nicole.chini@levvel.io **at least 24 hours prior to your technical interview**
+When you are finished, create a Pull Request in Github for the forked repository. This Pull Request should compare your created branch to the **main** branch. Email the link to your Pull Request to nicole.chini@levvel.io **at least 24 hours prior to your technical interview**
 
 Please make sure your Pull Request is for your forked repo, NOT the original repo
