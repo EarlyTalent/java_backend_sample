@@ -1,6 +1,6 @@
 package levvel.io.controller;
 
-import levvel.io.model.Blog;
+import levvel.io.model.*;
 import levvel.io.service.BlogService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
