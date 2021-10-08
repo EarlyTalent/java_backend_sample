@@ -1,3 +1,5 @@
+
+
 package levvel.io.service;
 
 import levvel.io.data.BlogRepository;
@@ -18,6 +20,16 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public Blog getBlog(String id) {
+        return blogRepository.findById(id).orElseGet(null);
+    }
+
+    @Override
+    public void addComment(Blog comment) {
+        blogRepository.save(comment);
+    }
+
+    @Override
+    public Blog getComment(String id) {
         return blogRepository.findById(id).orElseGet(null);
     }
 }
