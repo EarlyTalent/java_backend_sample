@@ -31,7 +31,7 @@ public class BlogController {
         return ResponseEntity.ok().body(comment);
     }
 
-    @GetMapping("/blog/post/{1}/comment")
+    @GetMapping("/blog/post/{id}/comment")
     public ResponseEntity<Comment[]> getComments(@PathVariable String id) {
         Comment[] comments = blogService.getComments(id);
         return ResponseEntity.ok().body(comments);
