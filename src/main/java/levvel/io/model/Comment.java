@@ -8,7 +8,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import java.time.LocalDateTime;
 
 @Data
-public class Blog {
+public class Comment {
 
     @Id
     String id;
@@ -20,10 +20,7 @@ public class Blog {
     private LocalDateTime lastModifiedDate;
 
     String author;
-    String title;
     String text;
-
-
 
     
 }
