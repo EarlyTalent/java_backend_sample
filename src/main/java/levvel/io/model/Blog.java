@@ -7,6 +7,8 @@ import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.LocalDateTime;
 
+import java.util.List;
+
 @Data
 public class Blog {
 
@@ -22,4 +24,5 @@ public class Blog {
     String author;
     String title;
     String text;
+    List<Comment> commentsList;
 }
