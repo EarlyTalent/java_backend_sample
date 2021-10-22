@@ -10,7 +10,7 @@ import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
+//import java.time.LocalDateTime;
 
 @RestController
 @AllArgsConstructor
@@ -21,8 +21,8 @@ public class BlogController {
 
     @PostMapping("/post")
     public ResponseEntity<Blog> addBlog(@RequestBody Blog blog) {
-        blog.setCreatedDate(LocalDateTime.now());
-        blog.setLastModifiedDate(LocalDateTime.now());
+        // blog.setCreatedDate(LocalDateTime.now());
+        // blog.setLastModifiedDate(LocalDateTime.now());
         blogService.addBlog(blog);
         return ResponseEntity.ok().body(blog);
     }
@@ -34,9 +34,9 @@ public class BlogController {
     }
 
     @PostMapping("/post/{id}/comment")
-    public ResponseEntity<Comment> addComment(@RequestBody Comment comment, String id) {
-        comment.setCreatedDate(LocalDateTime.now());
-        comment.setLastModifiedDate(LocalDateTime.now());
+    public ResponseEntity<Comment> addComment(@RequestBody Comment comment,@PathVariable String id) {
+        // comment.setCreatedDate(LocalDateTime.now());
+        // comment.setLastModifiedDate(LocalDateTime.now());
         blogService.addComment(comment, id);
         return ResponseEntity.ok().body(comment);
     }
