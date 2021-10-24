@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-public class BlogServiceImpl implements BlogService {
+public abstract class BlogServiceImpl implements BlogService {
 
     private BlogRepository blogRepository;
 
@@ -16,8 +16,11 @@ public class BlogServiceImpl implements BlogService {
         blogRepository.save(blog);
     }
 
+    
     @Override
     public Blog getBlog(String id) {
         return blogRepository.findById(id).orElseGet(null);
     }
+    
+
 }
