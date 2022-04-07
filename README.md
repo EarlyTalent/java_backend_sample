@@ -47,6 +47,6 @@ Junit - https://junit.org/junit5/docs/current/user-guide/
 Mockito - https://site.mockito.org/
 
 ## Submitting Your Work (IMPORTANT)
-When you are finished, create a Pull Request in Github for the forked repository. This Pull Request should compare your created branch to the **main** branch. Email the link to your Pull Request to nicole.chini@levvel.io **at least 24 hours prior to your technical interview**
+When you are finished, create a Pull Request in Github for the forked repository. This Pull Request should compare your created branch to the **main** branch. Email the link to your Pull Request to nicole.niemczycki@endava.com **at least 24 hours prior to your technical interview**
 
 Please make sure your Pull Request is for your forked repo, NOT the original repo
