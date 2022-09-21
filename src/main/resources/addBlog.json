@@ -1,5 +1,6 @@
 {
   "author": "Peter Parker",
   "title": "Title Example",
-  "text": "This is sample text for a blog post!"
+  "text": "This is sample text for a blog post!",
+  "comments" : []
 }
