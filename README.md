@@ -1,3 +1,12 @@
+# My Approach
+- I created a Comment class to represent comments, which have an author and the comment text.
+- I updated Blog to store a List of Comment Objects. 
+- When a Blog is instantiated it starts with 0 comments.
+- I added the two new API endpoints in the controller
+- You can add a comment to a post, which you find by Id
+- You can retrieve all comments to a post, which you find by Id
+- Notes: I used MongoDB Compass for ease of database use, and PostMan for Get and Post operations.
+
 # Levvel Technical Interview
 
 ## Project Setup
