@@ -1,7 +1,7 @@
 # Levvel Technical Interview
 
 ## Project Setup
-- Fork the repository and clone it to your local machine. For documentation on how to do this visit: https://docs.github.com/en/get-started/quickstart/fork-a-repo
+- Fork the repository and clone it to your local machine. For documentation on how to do this, please visit: https://docs.github.com/en/get-started/quickstart/fork-a-repo
 - Open the project locally
 - Create a new branch in the newly forked repo using the naming convention **yourFirstName_yourLastName**. This is where you work should be saved.
 - Run the project from the WorkSampleApplication class
@@ -52,4 +52,4 @@ When you are finished:
 - This Pull Request should compare your created branch on the forked repo to the **main** branch on your forked repo. 
 - Email the link to your Pull Request to nicole.niemczycki@endava.com **at least 24 hours prior to your technical interview**
 
-Again, please make sure your Pull Request is for your forked repo only, NOT the original repo you forked from initially.
+Again, please make sure your Pull Request is comparing the new branch you created on your forked repo to the *main* branch on your forked repo. The initial repository you forked off of should NOT be referenced.
