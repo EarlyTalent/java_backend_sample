@@ -13,4 +13,4 @@ public class WorkSampleApplication {
 }
 
 work done 1 2 3 4
-k
+k d
