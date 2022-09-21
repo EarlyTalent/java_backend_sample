@@ -12,4 +12,4 @@ public class WorkSampleApplication {
 
 }
 
-work done 1
+work done 1 2
