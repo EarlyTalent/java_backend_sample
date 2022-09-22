@@ -1,9 +1,9 @@
-# Levvel Technical Interview
+# Endava Technical Interview
 
 ## Project Setup
 - Fork the repository and clone it to your local machine. For documentation on how to do this, please visit: https://docs.github.com/en/get-started/quickstart/fork-a-repo
 - Open the project locally
-- Create a new branch in the newly forked repo using the naming convention **yourFirstName_yourLastName**. This is where you work should be saved.
+- Create a new branch in the newly forked repo using the naming convention **yourFirstName_yourLastName**. This is where your work should be saved.
 - Run the project from the WorkSampleApplication class
 - The application will start on [http://localhost:8080](http://localhost:8080)
 
