@@ -1,4 +1,4 @@
-# Levvel Technical Interview
+# Endava Technical Interview
 
 ## Project Setup
 - Fork the repository and clone it to your local machine. For documentation on how to do this, please visit: https://docs.github.com/en/get-started/quickstart/fork-a-repo
