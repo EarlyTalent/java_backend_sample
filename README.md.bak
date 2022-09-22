@@ -6,7 +6,7 @@
 - Create a new branch in the newly forked repo using the naming convention **yourFirstName_yourLastName**. This is where you work should be saved.
 - Run the project from the WorkSampleApplication class
 - The application will start on [http://localhost:8080](http://localhost:8080)
-- To better understand the workflow process, view [this video](https://www.youtube.com/watch?v=1jAtPrOrRPs) on how to fork a repository, and open a pull request to merge branches within a forked repository
+
 ## Existing State
 This is a simple REST application for serving a blog. <br>
 It uses Spring Framework, Maven, Java 11, Lombok and data is stored in a Mongo database.
