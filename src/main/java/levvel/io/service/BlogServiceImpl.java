@@ -7,7 +7,7 @@ import levvel.io.model.Comment;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -34,7 +34,8 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public Comment getComment(String id) {
-        return null;
+    public List<Comment> getComments(String id) {
+        Blog b = blogRepository.findById(id).orElseGet(null);
+        return b.getComments();
     }
 }
