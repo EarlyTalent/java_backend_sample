@@ -6,10 +6,10 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
+//Comment class that shows what a comment should contain
 @Data
-public class Blog {
+public class Comment {
 
     @Id
     String id;
@@ -21,8 +21,5 @@ public class Blog {
     private LocalDateTime lastModifiedDate;
 
     String author;
-    String title;
     String text;
-
-    List<Comment> comments;
 }

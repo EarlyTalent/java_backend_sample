@@ -1,6 +1,7 @@
 package levvel.io.controller;
 
 import levvel.io.model.Blog;
+import levvel.io.model.Comment;
 import levvel.io.service.BlogService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -23,5 +24,18 @@ public class BlogController {
     public ResponseEntity<Blog> getBlog(@PathVariable String id) {
         Blog blog = blogService.getBlog(id);
         return ResponseEntity.ok().body(blog);
+    }
+
+    //Mapping the comments for posting and getting
+    @PostMapping("/post/{id}/comment")
+    public ResponseEntity<Comment> addComment(@RequestBody Comment comment) {
+        blogService.addComment(comment);
+        return ResponseEntity.ok().body(comment);
+    }
+
+    @GetMapping("/post/{id}/comment")
+    public ResponseEntity<Comment> getComment(@PathVariable String id) {
+        Comment comment = blogService.getComment(id);
+        return ResponseEntity.ok().body(comment);
     }
 }
