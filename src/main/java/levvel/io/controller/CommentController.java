@@ -20,7 +20,7 @@ public class CommentController {
     private CommentService commentService;
 
     @PostMapping("/post/{id}/comment")
-    public ResponseEntity<Blog> addBlog(@PathVariable String id, @RequestBody Comment comment) {
+    public ResponseEntity<Blog> addComment(@PathVariable String id, @RequestBody Comment comment) {
         try {
             Blog blog = blogService.getBlog(id);
             commentService.addComment(blog, comment);
