@@ -20,6 +20,10 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public void addComment(Blog blog, Comment comment) {
+        if (blog == null) {
+            throw new IllegalArgumentException("Null blog provided to add comment to.");
+        }
+
         Comment commentSaved = commentRepository.save(comment);
 
         blog.getComments().add(commentSaved);
