@@ -7,6 +7,8 @@ import levvel.io.model.Comment;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class CommentServiceImpl implements CommentService {
@@ -21,5 +23,14 @@ public class CommentServiceImpl implements CommentService {
 
         blog.getComments().add(commentSaved);
         blogRepository.save(blog);
+    }
+
+    @Override
+    public List<Comment> getComments(String id) {
+        Blog blog = blogRepository.findById(id).orElse(null);
+        if (blog == null) {
+            throw new RuntimeException("The blog ID provided does not exist.");
+        }
+        return blog.getComments();
     }
 }
