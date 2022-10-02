@@ -1,5 +1,6 @@
 package levvel.io.controller;
 
+import levvel.io.exception.BlogNotExistException;
 import levvel.io.model.Blog;
 import levvel.io.service.BlogService;
 import lombok.AllArgsConstructor;
@@ -21,7 +22,11 @@ public class BlogController {
 
     @GetMapping("/post/{id}")
     public ResponseEntity<Blog> getBlog(@PathVariable String id) {
-        Blog blog = blogService.getBlog(id);
-        return ResponseEntity.ok().body(blog);
+        try {
+            Blog blog = blogService.getBlog(id);
+            return ResponseEntity.ok().body(blog);
+        } catch (BlogNotExistException e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 }

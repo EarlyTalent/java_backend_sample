@@ -1,5 +1,6 @@
 package levvel.io.controller;
 
+import levvel.io.exception.BlogNotExistException;
 import levvel.io.model.Blog;
 import levvel.io.model.Comment;
 import levvel.io.service.BlogService;
@@ -20,17 +21,21 @@ public class CommentController {
 
     @PostMapping("/post/{id}/comment")
     public ResponseEntity<Blog> addBlog(@PathVariable String id, @RequestBody Comment comment) {
-        Blog blog = blogService.getBlog(id);
-        commentService.addComment(blog, comment);
-        return ResponseEntity.ok().body(blog);
+        try {
+            Blog blog = blogService.getBlog(id);
+            commentService.addComment(blog, comment);
+            return ResponseEntity.ok().body(blog);
+        } catch (BlogNotExistException e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @GetMapping("/post/{id}/comment")
     public ResponseEntity<List<Comment>> getComments(@PathVariable String id) {
-        List<Comment> comments = commentService.getComments(id);
         try {
+            List<Comment> comments = commentService.getComments(id);
             return ResponseEntity.ok().body(comments);
-        } catch (Exception e) {
+        } catch (BlogNotExistException e) {
             return ResponseEntity.notFound().build();
         }
     }

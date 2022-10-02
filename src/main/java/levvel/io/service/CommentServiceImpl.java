@@ -2,6 +2,7 @@ package levvel.io.service;
 
 import levvel.io.data.BlogRepository;
 import levvel.io.data.CommentRepository;
+import levvel.io.exception.BlogNotExistException;
 import levvel.io.model.Blog;
 import levvel.io.model.Comment;
 import lombok.AllArgsConstructor;
@@ -26,11 +27,8 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public List<Comment> getComments(String id) {
-        Blog blog = blogRepository.findById(id).orElse(null);
-        if (blog == null) {
-            throw new RuntimeException("The blog ID provided does not exist.");
-        }
+    public List<Comment> getComments(String id) throws BlogNotExistException {
+        Blog blog = blogRepository.findById(id).orElseThrow(BlogNotExistException::new);
         return blog.getComments();
     }
 }
