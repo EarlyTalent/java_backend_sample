@@ -61,6 +61,11 @@ public final class CommentServiceTests {
     }
 
     @Test
+    public void Should_Fail_When_AddCommentToNullBlog() {
+        assertThrows(IllegalArgumentException.class, () -> commentService.addComment(null, createTestComment()));
+    }
+
+    @Test
     public void Should_GetCommentsFromPost_When_GetComments() throws BlogNotExistException {
         Blog blog = createTestBlog();
         Comment comment = createTestComment();
