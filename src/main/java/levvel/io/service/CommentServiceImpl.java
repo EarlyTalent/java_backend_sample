@@ -19,10 +19,8 @@ public class CommentServiceImpl implements CommentService {
     private CommentRepository commentRepository;
 
     @Override
-    public void addComment(Blog blog, Comment comment) {
-        if (blog == null) {
-            throw new IllegalArgumentException("Null blog provided to add comment to.");
-        }
+    public void addComment(String id, Comment comment) throws BlogNotExistException {
+        Blog blog = blogRepository.findById(id).orElseThrow(BlogNotExistException::new);
 
         Comment commentSaved = commentRepository.save(comment);
 

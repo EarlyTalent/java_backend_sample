@@ -45,7 +45,7 @@ public final class CommentServiceTests {
     }
 
     @Test
-    public void Should_AddCommentToPost_When_AddComment() {
+    public void Should_AddCommentToPost_When_AddComment() throws BlogNotExistException {
         Blog blog = createTestBlog();
         Comment comment = createTestComment();
         List<Blog> mockBlogsList = new ArrayList<>(List.of(blog));
@@ -53,7 +53,7 @@ public final class CommentServiceTests {
         Mockito.when(commentRepository.save(Mockito.any())).thenReturn(comment);
         prepareMockBlogRepository(mockBlogsList);
 
-        commentService.addComment(blog, comment);
+        commentService.addComment(blog.getId(), comment);
 
         assertEquals(1, mockBlogsList.size());
         assertEquals(1, mockBlogsList.get(0).getComments().size());
@@ -62,7 +62,12 @@ public final class CommentServiceTests {
 
     @Test
     public void Should_Fail_When_AddCommentToNullBlog() {
-        assertThrows(IllegalArgumentException.class, () -> commentService.addComment(null, createTestComment()));
+        Blog blog = createTestBlog();
+        List<Blog> mockBlogsList = new ArrayList<>(List.of(blog));
+
+        prepareMockBlogRepository(mockBlogsList);
+
+        assertThrows(BlogNotExistException.class, () -> commentService.addComment("unknownId123", createTestComment()));
     }
 
     @Test

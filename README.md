@@ -43,7 +43,7 @@ newly added endpoints for the assignment and invokes the `CommentService` for do
 the business logic for adding and getting comments.
 10. [**CommentServiceTests**](./src/test/java/levvel/io/CommentServiceTests.java) - The unit tests for testing the new
 functionality of adding and getting comments on blog posts.
-    * Tests success when adding comments.
-    * Tests failure when adding comment to null blog post.
+    * Tests success when adding comment to blog post with existing ID.
+    * Tests failure when adding comment to blog post with an ID that is unknown.
     * Tests success when fetching comments for blog post with existing ID.
     * Tests failure when fetching comments for blog post with an ID that is unknown.
