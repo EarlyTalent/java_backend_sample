@@ -2,6 +2,7 @@ package levvel.io;
 
 import levvel.io.data.BlogRepository;
 import levvel.io.data.CommentRepository;
+import levvel.io.exception.BlogNotExistException;
 import levvel.io.model.Blog;
 import levvel.io.model.Comment;
 import levvel.io.service.CommentService;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
 public final class CommentServiceTests {
@@ -56,6 +58,29 @@ public final class CommentServiceTests {
         assertEquals(1, mockBlogsList.size());
         assertEquals(1, mockBlogsList.get(0).getComments().size());
         assertEquals("comment123", mockBlogsList.get(0).getComments().get(0).getId());
+    }
+
+    @Test
+    public void Should_GetCommentsFromPost_When_GetComments() throws BlogNotExistException {
+        Blog blog = createTestBlog();
+        Comment comment = createTestComment();
+        blog.getComments().add(comment);
+
+        List<Blog> mockBlogsList = new ArrayList<>(List.of(blog));
+        prepareMockBlogRepository(mockBlogsList);
+
+        List<Comment> comments = commentService.getComments(blog.getId());
+
+        assertEquals(1, comments.size());
+        assertEquals(comment.getText(), comments.get(0).getText());
+    }
+
+    @Test
+    public void Should_Fail_When_GetComments_FromUnknownBlogId() {
+        List<Blog> mockBlogsList = new ArrayList<>(List.of(createTestBlog()));
+        prepareMockBlogRepository(mockBlogsList);
+
+        assertThrows(BlogNotExistException.class, () -> commentService.getComments("unknownId123"));
     }
 
     private void prepareMockBlogRepository(List<Blog> mockBlogsList) {
