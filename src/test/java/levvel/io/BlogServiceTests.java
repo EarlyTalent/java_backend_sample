@@ -19,7 +19,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-class BlogServiceTests {
+public final class BlogServiceTests {
 
 	@Mock
 	private BlogRepository blogRepository;
