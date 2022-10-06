@@ -7,4 +7,7 @@ public interface BlogService {
     void addBlog(Blog blog);
 
     Blog getBlog(String id);
+    
+    
+    
 }
