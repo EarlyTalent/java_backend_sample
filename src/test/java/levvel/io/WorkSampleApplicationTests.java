@@ -7,7 +7,8 @@ import org.junit.jupiter.api.DisplayName;
 
 import levvel.io.model.Blog;
 import levvel.io.model.Comment;
-import java.util.*; 
+import java.util.ArrayList; 
+import java.util.List;
 
 @SpringBootTest
 class WorkSampleApplicationTests {
